@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="RestSharp" Version="108.0.1" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y /f $(ProjectDir)*.properties $(ProjectDir)$(OutDir)\ &amp; &#xD;&#xA;xcopy /y $(ProjectDir)\TestData\*.* $(ProjectDir)$(OutDir)\TestData\*.* &amp; &#xD;&#xA;xcopy /y $(ProjectDir)\TestData\TestDataAPI\*.* $(ProjectDir)$(OutDir)\TestData\TestDataAPI\*.* &amp;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)\*.json&quot; &quot;$(ProjectDir)$(OutDir)\&quot;" />
+  </Target>
+
+</Project>
