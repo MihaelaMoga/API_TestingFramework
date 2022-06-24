@@ -108,7 +108,15 @@ namespace API_Testing_Framework.Tests.TestAPI
                         //SelectToken e un metoda ca si FindElement (dar intr-un json) si vrem sa returneze un string (=> folosim ToString)
 
                         Assert.AreEqual(results["distance"], json.SelectToken("$..route.distance").ToString().Replace(",", "."));
+                        Console.WriteLine("Expected distance is {0}", results["distance"]);
+                        Console.WriteLine("Actual distance is {0}", json.SelectToken("$..route.distance").ToString().Replace(",", "."));
+
+                        Console.WriteLine();
+
                         Assert.AreEqual(results["formattedTime"], json.SelectToken("$..route.formattedTime").ToString().Replace(",", "."));
+                        Console.WriteLine("Expected formattedTime is {0}", results["formattedTime"]);
+                        Console.WriteLine("Axpected formattedTime is {0}", json.SelectToken("$..route.formattedTime").ToString().Replace(",", "."));
+
 
                         break;
                     }
@@ -247,7 +255,14 @@ namespace API_Testing_Framework.Tests.TestAPI
                         //SelectToken e un metoda ca si FindElement (dar intr-un json) si vrem sa returneze un string (=> folosim ToString)
 
                         Assert.AreEqual(results["distance"], json.SelectToken("$..route.distance").ToString().Replace(",", "."));
+                        Console.WriteLine("Expected distance is {0}", results["distance"]);
+                        Console.WriteLine("Actual distance is {0}", json.SelectToken("$..route.distance").ToString().Replace(",", "."));
+
+                        Console.WriteLine();
+
                         Assert.AreEqual(results["formattedTime"], json.SelectToken("$..route.formattedTime").ToString().Replace(",", "."));
+                        Console.WriteLine("Expected formattedTime is {0}", results["formattedTime"]);
+                        Console.WriteLine("Axpected formattedTime is {0}", json.SelectToken("$..route.formattedTime").ToString().Replace(",", "."));
 
                         break;
                     }
